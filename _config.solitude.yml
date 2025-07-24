@@ -23,7 +23,12 @@ site:
 # --------------------------- 网站信息 end ---------------------------
 
 # --------------------------- 导航栏 start ---------------------------
-
+nav:
+  group:
+    - name: Google
+      url: https://www.google.com
+      icon: fas fa-search
+    
 
   menu:
     新闻:
@@ -63,7 +68,13 @@ site:
       AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
       LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
 
-    
+    朋友圈: /moments/ || fas fa-wifi
+    友人链: /links/ || fas fa-user-group
+    书签导航: https://sqdh.653827.xyz || fas fa-gift
+    常用:
+      我的装备: /equipment/ || fas fa-laptop
+      在线工具: /tlink/ || fas fa-toolbox
+      音乐时刻: /music/ || fas fa-music
 
   right:
     random: false
@@ -259,7 +270,12 @@ background:
 footer:
   information:
     author: https://pan.811520.xyz/2024-10/1728197294016.webp
-    
+    left:
+      Github: https://github.com/everfu || fab fa-github
+      Mail: mailto:o@everfu.cn || fab fa-envelope
+    right:
+      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
   randomlink: false
   license:
