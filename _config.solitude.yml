@@ -23,7 +23,11 @@ site:
 # --------------------------- 网站信息 end ---------------------------
 
 # --------------------------- 导航栏 start ---------------------------
-
+nav:
+  group:
+    - name: Google
+      url: https://www.google.com
+      # icon: fas fa-search
   menu:
     新闻:
       每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
