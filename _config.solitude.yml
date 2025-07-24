@@ -12,41 +12,20 @@
 # --------------------------- 网站信息 start ---------------------------
 site:
   name:
-    class: text
-    custom: Solitude
+    class: text # text / i_class / img
+    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
   icon: https://pan.811520.xyz/2024-10/1728197294016.webp
 # --------------------------- 网站信息 end ---------------------------
 
 # --------------------------- 导航栏 start ---------------------------
 nav:
- nav:
+  # 左侧LOGO或标题组，可自定义添加
   group:
-    - name: Google
-      url: https://www.google.com
-      icon: fas fa-search
-    - name: GitHub
-      url: https://github.com
-      icon: fab fa-github
-    - name: Bilibili
-      url: https://bilibili.com
-      icon: fab fa-bilibili
-    - name: CSDN
-      url: https://csdn.net
-      icon: fas fa-code
-      nav:
-  group:
-    - name: Google
-      url: https://www.google.com
-      icon: fas fa-search
-    - name: GitHub
-      url: https://github.com
-      icon: fab fa-github
-    - name: Bilibili
-      url: https://bilibili.com
-      icon: fab fa-bilibili
-    - name: CSDN
-      url: https://csdn.net
-      icon: fas fa-code
+    # - name: 项目
+    #   url: /project/
+    #   icon: fas fa-code
+
+  # 顶部菜单（可自由增删，支持多级菜单）
   menu:
     首页: / || fas fa-home
     文章:
@@ -63,9 +42,15 @@ nav:
       音乐时刻: /music/ || fas fa-music
     关于: /about/ || fas fa-user
 
+  # 右侧按钮（可自定义多个按钮）
   right:
     random: false
-    custom: []
+    custom:
+      - name: Start
+        url: https://www.travellings.cn/go.html
+        icon: fas fa-train
+        onclick:
+        id: travellings_button
 # --------------------------- 导航栏 end ---------------------------
 
 # --------------------------- 首页顶部 start ---------------------------
@@ -106,7 +91,8 @@ carousel: false
 
 # --------------------------- 侧边栏 start ---------------------------
 aside:
-  position: 1
+  # 侧边栏位置(0: 左 1: 右)
+  position: 0 # Sidebar positioning(0: left 1: right)
   home:
     noSticky: "about"
     Sticky: "allInfo"
@@ -162,6 +148,8 @@ aside:
     runtimeenable: true
     runtime: "2025-07-20 00:00:00"
 # --------------------------- 侧边栏 end ---------------------------
+
+# --------------------------- 首页顶部 end ---------------------------
 
 # --------------------------- 页面默认设置 start ---------------------------
 page:
@@ -341,13 +329,18 @@ rightside:
     translate: false
     mode: false
     aside: false
-# --------------------------- 右下角悬停导航栏 end ---------------------------
+# --------------------------- 右下角悬停导航栏 start ---------------------------
 
 # --------------------------- 页脚 start ---------------------------
 footer:
   information:
     author: https://pan.811520.xyz/2024-10/1728197294016.webp
-    
+    left:
+      Github: https://github.com/everfu || fab fa-github
+      Mail: mailto:o@everfu.cn || fab fa-envelope
+    right:
+      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
   randomlink: false
   license:
@@ -381,7 +374,7 @@ music:
 
 # --------------------------- 音乐胶囊 start ---------------------------
 capsule:
-  enable: true
+  enable: false
   id: 8407304077
   server: netease
   type: playlist
@@ -389,13 +382,13 @@ capsule:
 
 # --------------------------- 快捷菜单 start ---------------------------
 keyboard:
-  enable: true
+  enable: false
   list:
 # --------------------------- 快捷菜单 end ---------------------------
 
 # --------------------------- 图片懒加载 start ---------------------------
 lazyload:
-  enable: yrue
+  enable: false
   field: site
   placeholder: /img/loading.avif
   errorimg: /img/error_load.avif
@@ -425,7 +418,7 @@ mediumZoom: false
 
 # --------------------------- 纪念日变灰 start ---------------------------
 memorial:
-  enable: true
+  enable: false
   date:
 # --------------------------- 纪念日变灰 end ---------------------------
 
