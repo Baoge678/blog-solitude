@@ -46,7 +46,7 @@ nav:
     朋友:
       朋友圈: /moments/ || fas fa-wifi
       友人链: /links/ || fas fa-user-group
-      宝藏贴: javascript:travelling() || fas fa-gift
+      书签导航: https://sqdh.653827.xyz || fas fa-gift
     常用:
       我的装备: /equipment/ || fas fa-laptop
       在线工具: /tlink/ || fas fa-toolbox
