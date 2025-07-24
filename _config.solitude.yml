@@ -19,16 +19,34 @@ site:
 
 # --------------------------- 导航栏 start ---------------------------
 nav:
+ nav:
   group:
-    - name: 项目
-      url: /project/
+    - name: Google
+      url: https://www.google.com
+      icon: fas fa-search
+    - name: GitHub
+      url: https://github.com
+      icon: fab fa-github
+    - name: Bilibili
+      url: https://bilibili.com
+      icon: fab fa-bilibili
+    - name: CSDN
+      url: https://csdn.net
       icon: fas fa-code
-    - name: 项目
-      url: /project/
+      nav:
+  group:
+    - name: Google
+      url: https://www.google.com
+      icon: fas fa-search
+    - name: GitHub
+      url: https://github.com
+      icon: fab fa-github
+    - name: Bilibili
+      url: https://bilibili.com
+      icon: fab fa-bilibili
+    - name: CSDN
+      url: https://csdn.net
       icon: fas fa-code
-    - name: 项目
-      url: /project/
-      icon: fas fa-code  
   menu:
     首页: / || fas fa-home
     文章:
@@ -329,10 +347,7 @@ rightside:
 footer:
   information:
     author: https://pan.811520.xyz/2024-10/1728197294016.webp
-    left:
-      Github: https://github.com/everfu || fab fa-github
-    right:
-      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+    
   group:
   randomlink: false
   license:
@@ -366,7 +381,7 @@ music:
 
 # --------------------------- 音乐胶囊 start ---------------------------
 capsule:
-  enable: false
+  enable: true
   id: 8407304077
   server: netease
   type: playlist
@@ -374,13 +389,13 @@ capsule:
 
 # --------------------------- 快捷菜单 start ---------------------------
 keyboard:
-  enable: false
+  enable: true
   list:
 # --------------------------- 快捷菜单 end ---------------------------
 
 # --------------------------- 图片懒加载 start ---------------------------
 lazyload:
-  enable: false
+  enable: yrue
   field: site
   placeholder: /img/loading.avif
   errorimg: /img/error_load.avif
@@ -410,7 +425,7 @@ mediumZoom: false
 
 # --------------------------- 纪念日变灰 start ---------------------------
 memorial:
-  enable: false
+  enable: true
   date:
 # --------------------------- 纪念日变灰 end ---------------------------
 
