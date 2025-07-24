@@ -4,7 +4,12 @@
 # Github: https://github.com/everfu/hexo-theme-solitude
 #
 # Guide: https://solitude.js.org
+# You can get more detailed help from the guide
+# 指南：https://solitude.js.org
 # 你可以从指南中获取更详细的帮助
+#
+# sponsor: https://ko-fi.com/everfu
+# 赞助：https://afdian.com/a/everfu
 # ---------------------------
 
 ### Basic configuration
@@ -12,69 +17,76 @@
 # --------------------------- 网站信息 start ---------------------------
 site:
   name:
-    class: text # text / i_class / img
-    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
+    class: text
+    custom: Solitude
   icon: https://pan.811520.xyz/2024-10/1728197294016.webp
 # --------------------------- 网站信息 end ---------------------------
 
 # --------------------------- 导航栏 start ---------------------------
 nav:
-  # 左侧LOGO或标题组，可自定义添加
   group:
-    # - name: 项目
-    #   url: /project/
-    #   icon: fas fa-code
+    - name: Google
+      url: https://www.google.com
+      icon: fas fa-search
+    - name: GitHub
+      url: https://github.com
+      icon: fab fa-github
+    - name: Bilibili
+      url: https://bilibili.com
+      icon: fab fa-bilibili
+    - name: CSDN
+      url: https://csdn.net
+      icon: fas fa-code
 
-  # 顶部菜单（可自由增删，支持多级菜单）
   menu:
-  新闻:
-    每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
-    新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
-    每日简报: https://kui.li/news || https://unavatar.io/kui.li
-    懒人早报: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%bb%e6%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
-    速热点: https://www.suredian.com/ || https://unavatar.io/www.suredian.com
-    Feedly: https://feedly.com/i/my/me || https://unavatar.io/feedly.com
-    FOLO: https://app.follow.is/timeline/view-0/all/pending || https://unavatar.io/app.follow.is
-    财经新闻: https://sina-news.vercel.app/ || https://s3.bmp.ovh/imgs/2025/04/16/73d944905f090a66.jpg
+    新闻:
+      每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
+      新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
+      每日简报: https://kui.li/news || https://unavatar.io/kui.li
+      懒人早报: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%bb%e6%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
+      速热点: https://www.suredian.com/ || https://unavatar.io/www.suredian.com
+      Feedly: https://feedly.com/i/my/me || https://unavatar.io/feedly.com
+      FOLO: https://app.follow.is/timeline/view-0/all/pending || https://unavatar.io/app.follow.is
+      财经新闻: https://sina-news.vercel.app/ || https://s3.bmp.ovh/imgs/2025/04/16/73d944905f090a66.jpg
 
-  天气:
-    泰安天气: https://www.qweather.com/weather/tai'an-101120801.html || https://s3.bmp.ovh/imgs/2025/04/11/cbbf91bbd2b4df69.png
-    岱岳天气: https://tianqi.moji.com/weather/china/shandong/daiyue-district || https://s3.bmp.ovh/imgs/2025/04/16/b54015cf0979f19a.png
-    泰安天气2: https://tianqi.qq.com/index.htm || https://unavatar.io/tianqi.qq.com
-    天气君: https://waptianqi.tianqijun.com/weather1d/101120801/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
-    泰安天气卡片: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/%E6%B3%B0%E5%AE%89%E5%B8%82%E5%A4%A9%E6%B0%94 || https://s3.bmp.ovh/imgs/2025/07/22/be89ef3aa00a9528.png
+    天气:
+      泰安天气: https://www.qweather.com/weather/tai'an-101120801.html || https://s3.bmp.ovh/imgs/2025/04/11/cbbf91bbd2b4df69.png
+      岱岳天气: https://tianqi.moji.com/weather/china/shandong/daiyue-district || https://s3.bmp.ovh/imgs/2025/04/16/b54015cf0979f19a.png
+      泰安天气2: https://tianqi.qq.com/index.htm || https://unavatar.io/tianqi.qq.com
+      天气君: https://waptianqi.tianqijun.com/weather1d/101120801/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
+      泰安天气卡片: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/%E6%B3%B0%E5%AE%89%E5%B8%82%E5%A4%A9%E6%B0%94 || https://s3.bmp.ovh/imgs/2025/07/22/be89ef3aa00a9528.png
 
-  影院:
-    LibreTV-ys: https://ys.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
-    LibreTV: https://libretv.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
-    LibreTV-x: https://libretv-x.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
-    MoonTV: https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/ || https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/favicon.ico
-    影视: https://vd.ruo.my/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
-    老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
+    影院:
+      LibreTV-ys: https://ys.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      LibreTV: https://libretv.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      LibreTV-x: https://libretv-x.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      MoonTV: https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/ || https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/favicon.ico
+      影视: https://vd.ruo.my/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
+      老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
 
-  导航:
-    彩虹工具网: https://tool.cccyun.cc/ || https://s3.bmp.ovh/imgs/2025/03/16/2499eb4888a8aa1a.png
-    网址导航: https://navpage.pagex.top/ || https://unavatar.io/navpage.pagex.top
-    书签导航: https://dh.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/06/4eefad659ac22401.webp
-    导航发布页: https://wang.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
+    导航:
+      彩虹工具网: https://tool.cccyun.cc/ || https://s3.bmp.ovh/imgs/2025/03/16/2499eb4888a8aa1a.png
+      网址导航: https://navpage.pagex.top/ || https://unavatar.io/navpage.pagex.top
+      书签导航: https://dh.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/06/4eefad659ac22401.webp
+      导航发布页: https://wang.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
 
-  AI:
-    AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
-    AI工具箱: https://aiproducthome.top/ || https://s3.bmp.ovh/imgs/2025/04/16/bf5e7295d50e3148.png
-    AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
-    LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
+    AI:
+      AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
+      AI工具箱: https://aiproducthome.top/ || https://s3.bmp.ovh/imgs/2025/04/16/bf5e7295d50e3148.png
+      AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
+      LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
 
-  
+    朋友圈: /moments/ || fas fa-wifi
+    友人链: /links/ || fas fa-user-group
+    书签导航: https://sqdh.653827.xyz || fas fa-gift
+    常用:
+      我的装备: /equipment/ || fas fa-laptop
+      在线工具: /tlink/ || fas fa-toolbox
+      音乐时刻: /music/ || fas fa-music
 
-  # 右侧按钮（可自定义多个按钮）
   right:
     random: false
-    custom:
-      - name: Start
-        url: https://www.travellings.cn/go.html
-        icon: fas fa-train
-        onclick:
-        id: travellings_button
+    custom: []
 # --------------------------- 导航栏 end ---------------------------
 
 # --------------------------- 首页顶部 start ---------------------------
@@ -115,8 +127,6 @@ carousel: false
 
 # --------------------------- 侧边栏 start ---------------------------
 aside:
-  # 侧边栏位置(0: 左 1: 右)
-  position: 0 # Sidebar positioning(0: left 1: right)
   home:
     noSticky: "about"
     Sticky: "allInfo"
@@ -126,6 +136,7 @@ aside:
   page:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
+  position: 1
   card:
     style: 0
     author:
@@ -172,8 +183,6 @@ aside:
     runtimeenable: true
     runtime: "2025-07-20 00:00:00"
 # --------------------------- 侧边栏 end ---------------------------
-
-# --------------------------- 首页顶部 end ---------------------------
 
 # --------------------------- 页面默认设置 start ---------------------------
 page:
@@ -265,101 +274,16 @@ background:
   light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
 # --------------------------- 背景图片 end ---------------------------
 
-# --------------------------- start ---------------------------
-lure:
-  enable: false
-  jump: 404 Not Found
-  back: ヾ(≧∇≦*)ゝ哈哈，你上当了！
-# --------------------------- end ---------------------------
-
-# --------------------------- 文章过期提醒 start ---------------------------
-expire:
-  enable: false
-  time: 180
-  position: top
-  text_prev: "This article expired "
-  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
-# --------------------------- 文章过期提醒 end ---------------------------
-
-# --------------------------- 首页文章显示方式 start ---------------------------
-index_post_list:
-  direction: column
-  column: 2
-  cover: both
-# --------------------------- 首页文章显示方式 end ---------------------------
-
-# --------------------------- 显示相关文章 start ---------------------------
-related_post:
-  enable: true
-  limit: 4
-  date_type: created
-# --------------------------- 显示相关文章 end ---------------------------
-
-# --------------------------- 右键菜单 start ---------------------------
-right_menu:
-  enable: false
-  commentBarrage: false
-  ctrlOriginalMenu: false
-  translate: false
-  custom_list:
-# --------------------------- 右键菜单 end -----------------------
-
-# --------------------------- 复制信息 start ---------------------------
-copy:
-  enable: false
-  copyright:
-    enable: false
-    limit: 50
-# --------------------------- 复制信息 end ---------------------------
-
-# --------------------------- start ---------------------------
-mermaid: false
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-chart: false
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-typeit: false
-# --------------------------- end ---------------------------
-
-### Extended configuration
-
-# --------------------------- 控制台 start ---------------------------
-console:
-  enable: true
-  recentComment:
-    enable: true
-    storage: .5
-  card:
-    tags: true
-    archive: true
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-translate:
-  enable: true
-  defaultEncoding: 2
-  translateDelay: 0
-# --------------------------- end ---------------------------
-
-# --------------------------- 右下角悬停导航栏 start ---------------------------
-rightside:
-  enable: false
-  percent: false
-  hide:
-    enable: false
-    translate: false
-    mode: false
-    aside: false
-# --------------------------- 右下角悬停导航栏 start ---------------------------
-
 # --------------------------- 页脚 start ---------------------------
 footer:
   information:
     author: https://pan.811520.xyz/2024-10/1728197294016.webp
-    
+    left:
+      Github: https://github.com/everfu || fab fa-github
+      Mail: mailto:o@everfu.cn || fab fa-envelope
+    right:
+      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
   group:
   randomlink: false
   license:
@@ -370,251 +294,4 @@ footer:
       url: /atom.xml
 # --------------------------- 页脚 end ---------------------------
 
-# --------------------------- 404 页面 start ---------------------------
-errorpage:
-  img: /img/404.avif
-  text: =awa= Page Not Found
-  recommendList: true
-# --------------------------- 404 页面 end ---------------------------
-
-# --------------------------- 音乐API start ---------------------------
-meting_api: "https://meting.everfu.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r"
-# --------------------------- 音乐API end ---------------------------
-
-# --------------------------- 音乐馆 start ---------------------------
-music:
-  enable: true
-  id: 1994908354
-  server: netease
-  type: playlist
-  volume: 0.8
-  mutex: true
-# --------------------------- 音乐馆 end ---------------------------
-
-# --------------------------- 音乐胶囊 start ---------------------------
-capsule:
-  enable: false
-  id: 8407304077
-  server: netease
-  type: playlist
-# --------------------------- 音乐胶囊 end ---------------------------
-
-# --------------------------- 快捷菜单 start ---------------------------
-keyboard:
-  enable: false
-  list:
-# --------------------------- 快捷菜单 end ---------------------------
-
-# --------------------------- 图片懒加载 start ---------------------------
-lazyload:
-  enable: false
-  field: site
-  placeholder: /img/loading.avif
-  errorimg: /img/error_load.avif
-# --------------------------- 图片懒加载 end ---------------------------
-
-# --------------------------- 主页加载 start ---------------------------
-loading:
-  fullpage: false
-  pace: true
-# --------------------------- 主页加载 end ---------------------------
-
-# --------------------------- 代码块高亮 start ---------------------------
-highlight:
-  enable: true
-  limit: 200
-  copy: true
-  expand: true
-  theme: default
-  color: default
-# --------------------------- 代码块高亮 end ---------------------------
-
-# --------------------------- 图片灯箱 start ---------------------------
-lightbox: false
-fancybox: true
-mediumZoom: false
-# --------------------------- 图片灯箱 end ---------------------------
-
-# --------------------------- 纪念日变灰 start ---------------------------
-memorial:
-  enable: false
-  date:
-# --------------------------- 纪念日变灰 end ---------------------------
-
-# --------------------------- start ---------------------------
-OpenGraph:
-  enable: false
-  options:
-# --------------------------- end ---------------------------
-
-# --------------------------- 字数统计 start ---------------------------
-wordcount: false
-# --------------------------- 字数统计 end ---------------------------
-
-# --------------------------- 数学公式 start ---------------------------
-katex:
-  enable: true
-  per_page: false
-  copytex: true
-# --------------------------- 数学公式 end ---------------------------
-
-# --------------------------- start ---------------------------
-verify_site:
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-css_prefix: false
-# --------------------------- end ---------------------------
-
-# --------------------------- 扩展设置 start ---------------------------
-extends:
-  head:
-  body:
-# --------------------------- 扩展设置  end ---------------------------
-
-# --------------------------- start ---------------------------
-pwa:
-  enable: false
-  manifest: /manifest.json
-  theme_color: "#006a73"
-  mask_icon: /img/pwa/favicon.png
-  apple_touch_icon: /img/pwa/favicon.png
-  bookmark_icon: /img/pwa/favicon.png
-  favicon_32_32: /img/pwa/favicon_32.png
-  favicon_16_16: /img/pwa/favicon_16.png
-# --------------------------- end ---------------------------
-
-# --------------------------- 评论系统 start ---------------------------
-comment:
-  use:
-  commentBarrage: true
-  lazyload: false
-  count: true
-  pv: true
-  avatar: https://gravatar.com/avatar
-  hot_tip:
-    enable: false
-    count: 3
-  newest_comment:
-    enable: true
-    storage: .5
-    limit: 5
-twikoo:
-  envId:
-  region:
-  style: true
-  accessToken:
-  option:
-waline:
-  envId:
-  pageview: false
-  option:
-valine:
-  appId:
-  appKey:
-  serverURLs:
-  avatar:
-  visitor: false
-  style: true
-  option:
-artalk:
-  server:
-  site:
-  option:
-giscus:
-  repo:
-  repo_id:
-  category_id:
-  theme:
-    light: light
-    dark: dark
-  option:
-# --------------------------- 评论系统 end ---------------------------
-
-# --------------------------- 搜索系统 start ---------------------------
-search:
-  enable: true
-  type: local
-  tags:
-  algolia:
-    appId: "Z7A3XW4R2I"
-    apiKey: "12db1ad54372045549ef465881c17e743"
-    adminApiKey: "40321c7c207e7f73b63a19aa24c4761b"
-    chunkSize: 5000
-    indexName: ""
-    fields:
-  local:
-    preload: false
-    CDN:
-# --------------------------- 搜索系统 end ---------------------------
-
-# --------------------------- 弹幕留言 start ---------------------------
-envelope:
-  enable: false
-  line: 10
-  speed: 20
-  hover: true
-  loop: true
-  page: /message/
-# --------------------------- 弹幕留言 end ---------------------------
-
-# --------------------------- 即刻短文 start ---------------------------
-says:
-  enable: true
-  home_mini: false
-  page: /essay/
-  style: 1
-  strip: 30
-# --------------------------- 即刻短文 end ---------------------------
-
-# --------------------------- 最近评论 start ---------------------------
-recent_comments:
-  enable: true
-  limit: 50
-  cache: 0.2
-  page: /recentcomments/
-  img: /img/recent_c.avif
-# --------------------------- 最近评论 end ---------------------------
-
-# --------------------------- busuanzi start ---------------------------
-busuanzi: false
-busuanzi_use: 0
-# --------------------------- busuanzi end ---------------------------
-
-# --------------------------- AI start ---------------------------
-tianli_talk:
-  enable: false
-  title: 智能客服与搜索
-  key:
-  option:
-post_ai:
-  enable: false
-  modelName: GPT 4
-  key:
-  talk:
-  randomPost: false
-  report: https://solitude.js.org
-  tips:
-# --------------------------- AI end ---------------------------
-
-# --------------------------- 谷歌广告 start ---------------------------
-google_adsense:
-  enable: false
-  auto_ads: false
-  enable_page_level_ads: true
-  aside_card: true
-  post_card: true
-  post_content: true
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client:
-  slot:
-# --------------------------- 谷歌广告 end ---------------------------
-
-# --------------------------- CDN设置 start ---------------------------
-CDN:
-  internal: local
-  third_party: cdnjs
-  version: true
-  custom_format: //open.lightxi.com/cdnjs/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}
-  options:
-# --------------------------- CDN设置 end ---------------------------
+# 其余配置项（如 comment、search、music、capsule、highlight、katex、pwa、CDN等）可参考官方文档或你原有的配置继续补充
