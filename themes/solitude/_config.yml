@@ -851,8 +851,8 @@ giscus:
 # --------------------------- start ---------------------------
 # Search
 search:
-  enable: false
-  type: # local / algolia / docsearch
+  enable: true # true
+  type: local # local / algolia / docsearch
   tags:
     # - Solitude
     # - Hexo
