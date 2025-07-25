@@ -28,6 +28,10 @@ nav:
   #   - name: Google
   #     url: https://www.google.com
   menu:
+    文章: # name
+      归档: /archives/ || fas fa-folder-closed # item name: link || icon
+      分类: /categories/ || fas fa-clone
+      标签: /tags/ || fas fa-tags
     新闻:
       每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
       新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
@@ -63,7 +67,10 @@ nav:
       AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
       AI工具箱: https://aiproducthome.top/ || https://s3.bmp.ovh/imgs/2025/04/16/bf5e7295d50e3148.png
       AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
-      LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
+      LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.a
+
+    
+     
 
     
   right:

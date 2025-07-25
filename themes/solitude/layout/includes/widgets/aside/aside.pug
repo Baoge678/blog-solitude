@@ -12,6 +12,7 @@ else if(is_page() || is_archive() || is_tag() || is_category())
     - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
 if noSticky || Sticky
     .aside-content#aside-content
+        include ./asideWeatherCard.pug
         each item in noSticky || []
             include ./asideSwitch.pug
         .sticky_layout
