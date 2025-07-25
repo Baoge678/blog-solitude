@@ -34,7 +34,7 @@ function updateWeatherData(data) {
     if (locationEl) locationEl.textContent = data.city;
     if (dateTimeEl) dateTimeEl.textContent = data.date + ' ' + data.update_time.split(' ')[1];
     if (tempEl) tempEl.textContent = data.temp + '°C';
-    if (weatherNowEl) weatherNowEl.textContent = '当前天气: ' + data.weather;
+    if (weatherNowEl) weatherNowEl.textContent = data.weather;
     if (weatherRangeEl) weatherRangeEl.textContent = '今日: ' + data.min_temp + '°C - ' + data.max_temp + '°C';
     if (aqiEl) aqiEl.textContent = '空气质量 [AQI: ' + data.aqi.air + ' - ' + data.aqi.air_level + ']';
     
