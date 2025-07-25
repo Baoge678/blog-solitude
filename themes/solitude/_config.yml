@@ -241,7 +241,7 @@ post:
     # 版权
     copyright:
       enable: true
-      author: /img/logo.png # url
+      author: https://s3.bmp.ovh/imgs/2025/03/12/f7dc5f482df9c47f.jpg # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
