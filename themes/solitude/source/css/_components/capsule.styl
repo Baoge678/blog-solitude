@@ -250,3 +250,30 @@
 .aplayer-thumb
   width: 0 !important
   height: 0 !important
+
+// 移动端适配
+@media (max-width: 768px)
+  #nav-music
+    bottom: 15px
+    left: 15px
+    transform: scale(0.9)
+    
+    &:hover
+      transform: scale(0.95)
+    
+    &.playing
+      transform: scale(0.95)
+    
+    .aplayer.aplayer-withlrc
+      .aplayer-pic
+        height: 22px
+        width: 22px
+    
+    #nav-music-hoverTips
+      font-size: 10px
+      
+      i
+        font-size: 14px
+    
+    &.stretch .aplayer.aplayer-withlrc .aplayer-lrc
+      width: 150px

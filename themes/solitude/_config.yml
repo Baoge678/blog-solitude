@@ -592,14 +592,14 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 # Capsule music
 # 音乐胶囊
 capsule:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
+  enable: true
+  # 歌单 ID / 单曲 ID (使用一个流行的歌单)
+  id: 60198
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
   type: playlist
-  volume: 0.8
+  volume: 0.6
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -881,19 +881,19 @@ search:
 # Music Page
 # 音乐馆
 music:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
+  enable: true
+  # 歌单 ID / 单曲 ID (使用一个流行的歌单)
+  id: 60198
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
   type: playlist
   # 默认音量
-  volume: 0.8
+  volume: 0.6
   # 是否自动播放
   mutex: true
   # 播放方式：list / random
-  order: list
+  order: random
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
