@@ -39,7 +39,4 @@ git pushall
 
 .\push.ps1
 
-#或者中文脚本
-
-.\推送.ps1
   
