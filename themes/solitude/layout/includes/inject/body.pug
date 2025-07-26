@@ -293,10 +293,44 @@ script.
       if (tempEl) tempEl.textContent = data.temp + '°C';
       if (weatherRangeEl) weatherRangeEl.textContent = '今日: ' + data.min_temp + '°C - ' + data.max_temp + '°C';
       if (weatherNowEl) weatherNowEl.textContent = '当前天气: ' + data.weather;
-      if (aqiEl) aqiEl.textContent = '空气质量 [AQI: ' + data.aqi.air + ' - ' + data.aqi.air_level + ']';
+      if (aqiEl) {
+          aqiEl.textContent = '空气质量 [AQI: ' + data.aqi.air + ' - ' + data.aqi.air_level + ']';
+          // 根据空气质量等级设置颜色
+          updateAQIColor(aqiEl, data.aqi.air_level);
+      }
       
       updateWeatherIcon(data.weather_code);
       console.log('天气数据更新完成');
+  }
+  
+  function updateAQIColor(aqiEl, airLevel) {
+      // 移除之前的颜色类
+      aqiEl.classList.remove('aqi-excellent', 'aqi-good', 'aqi-moderate', 'aqi-poor', 'aqi-very-poor', 'aqi-hazardous');
+      
+      // 根据空气质量等级设置颜色
+      switch(airLevel) {
+          case '优':
+              aqiEl.classList.add('aqi-excellent');
+              break;
+          case '良':
+              aqiEl.classList.add('aqi-good');
+              break;
+          case '轻度污染':
+              aqiEl.classList.add('aqi-moderate');
+              break;
+          case '中度污染':
+              aqiEl.classList.add('aqi-poor');
+              break;
+          case '重度污染':
+              aqiEl.classList.add('aqi-very-poor');
+              break;
+          case '严重污染':
+              aqiEl.classList.add('aqi-hazardous');
+              break;
+          default:
+              // 默认颜色（保持原来的红色）
+              break;
+      }
   }
   
   function updateWeatherIcon(weatherCode) {
@@ -325,7 +359,11 @@ script.
       if (tempEl) tempEl.textContent = '--';
       if (weatherRangeEl) weatherRangeEl.textContent = '';
       if (weatherNowEl) weatherNowEl.textContent = msg;
-      if (aqiEl) aqiEl.textContent = '';
+      if (aqiEl) {
+          aqiEl.textContent = '';
+          // 重置颜色
+          aqiEl.classList.remove('aqi-excellent', 'aqi-good', 'aqi-moderate', 'aqi-poor', 'aqi-very-poor', 'aqi-hazardous');
+      }
   }
   
   // 立即初始化天气卡片
