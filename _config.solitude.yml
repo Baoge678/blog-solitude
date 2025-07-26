@@ -100,7 +100,7 @@ hometop:
         img: https://i.postimg.cc/nhgjwjCS/git.png
         color: "#df5b40"
   group:
-    热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+    热门: /tags/文章/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
   recommendList:
     sup: 置顶
     title: Solitude 官方文档

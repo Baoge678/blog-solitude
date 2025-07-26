@@ -189,9 +189,20 @@ script.
       const cachedData = getCachedWeather();
       if (cachedData) {
           updateWeatherData(cachedData);
+          // 如果缓存数据较旧（超过10分钟），在后台更新数据
+          const cacheTimestamp = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)).timestamp;
+          if (Date.now() - cacheTimestamp > 10 * 60 * 1000) {
+              console.log('缓存数据较旧，在后台更新...');
+              fetchWeatherFromAPI(true); // 静默更新
+          }
           return;
       }
       
+      // 如果没有缓存，直接获取新数据
+      fetchWeatherFromAPI(false);
+  }
+  
+  function fetchWeatherFromAPI(silent = false) {
       // 检查API调用限制
       if (!checkAndUpdateRequestCount()) {
           // 如果超过限制，尝试使用过期缓存
@@ -206,14 +217,22 @@ script.
                   console.error('解析过期缓存失败:', e);
               }
           }
-          showError('今日API调用次数已达上限，请明天再试');
+          if (!silent) {
+              showError('今日API调用次数已达上限，请明天再试');
+          }
           return;
       }
       
       const token = "seyregrpl1dc1o60cudohsufiv2ciz";
       const apiUrl = 'https://v3.alapi.cn/api/tianqi?token='+token+'&city=泰安';
-      fetch(apiUrl)
+      
+      // 设置请求超时
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10秒超时
+      
+      fetch(apiUrl, { signal: controller.signal })
           .then(response => {
+              clearTimeout(timeoutId);
               if (!response.ok) {
                   throw new Error('网络响应异常');
               }
@@ -225,13 +244,39 @@ script.
                   saveWeatherCache(data.data);
                   updateWeatherData(data.data);
               } else {
-                  showError('获取天气数据失败');
+                  if (!silent) {
+                      showError('获取天气数据失败');
+                  }
               }
           })
           .catch((error) => {
+              clearTimeout(timeoutId);
               console.error('请求天气数据出错:', error);
-              showError('请求天气数据出错');
+              if (!silent) {
+                  showError('请求天气数据出错');
+              }
+              // 如果是首次加载且没有缓存，尝试使用默认数据
+              if (!localStorage.getItem(WEATHER_CACHE_KEY)) {
+                  showDefaultWeather();
+              }
           });
+  }
+  
+  function showDefaultWeather() {
+      console.log('显示默认天气数据');
+      const now = new Date();
+      const defaultData = {
+          city: '泰安',
+          date: now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0'),
+          update_time: now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0'),
+          temp: '--',
+          weather: '数据加载中...',
+          min_temp: '--',
+          max_temp: '--',
+          weather_code: 'yin',
+          aqi: { air: '--', air_level: '--' }
+      };
+      updateWeatherData(defaultData);
   }
   
   function updateWeatherData(data) {
@@ -246,8 +291,8 @@ script.
       if (locationEl) locationEl.textContent = data.city;
       if (dateTimeEl) dateTimeEl.textContent = data.date + ' ' + data.update_time.split(' ')[1];
       if (tempEl) tempEl.textContent = data.temp + '°C';
-      if (weatherNowEl) weatherNowEl.textContent = '当前天气: ' + data.weather;
       if (weatherRangeEl) weatherRangeEl.textContent = '今日: ' + data.min_temp + '°C - ' + data.max_temp + '°C';
+      if (weatherNowEl) weatherNowEl.textContent = '当前天气: ' + data.weather;
       if (aqiEl) aqiEl.textContent = '空气质量 [AQI: ' + data.aqi.air + ' - ' + data.aqi.air_level + ']';
       
       updateWeatherIcon(data.weather_code);
@@ -278,13 +323,14 @@ script.
       const aqiEl = document.querySelector('.card-weather-memphis .air-quality-title');
       
       if (tempEl) tempEl.textContent = '--';
-      if (weatherNowEl) weatherNowEl.textContent = msg;
       if (weatherRangeEl) weatherRangeEl.textContent = '';
+      if (weatherNowEl) weatherNowEl.textContent = msg;
       if (aqiEl) aqiEl.textContent = '';
   }
   
-  document.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM加载完成，开始初始化天气卡片...');
+  // 立即初始化天气卡片
+  function initWeatherCard() {
+      console.log('开始初始化天气卡片...');
       
       // 显示今日API使用情况
       const today = getTodayString();
@@ -295,7 +341,15 @@ script.
       }
       console.log(`今日API调用次数: ${count}/${MAX_REQUESTS_PER_DAY}`);
       
-      fetchWeather();
+      // 立即显示默认数据，然后获取真实数据
+      showDefaultWeather();
+      
+      // 延迟一点时间再获取真实数据，确保DOM已完全加载
+      setTimeout(() => {
+          fetchWeather();
+      }, 100);
+      
+      // 设置刷新按钮事件
       var btn = document.querySelector('.card-weather-memphis .refresh-btn');
       if(btn) {
           btn.addEventListener('click', function(){
@@ -307,6 +361,20 @@ script.
       } else {
           console.error('未找到刷新按钮');
       }
+  }
+  
+  // 在DOM加载完成后立即初始化
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWeatherCard);
+  } else {
+      // DOM已经加载完成，立即初始化
+      initWeatherCard();
+  }
+  
+  // 为了兼容pjax，在页面切换时重新初始化
+  document.addEventListener('pjax:complete', function() {
+      console.log('pjax完成，重新初始化天气卡片...');
+      setTimeout(initWeatherCard, 50);
   });
 
 if theme.footer.randomlink
