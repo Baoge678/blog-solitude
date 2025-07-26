@@ -106,6 +106,28 @@ hometop:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
+# Drag Effects Configuration
+# 拖动效果配置
+drag_effects:
+  enable: true # 是否启用拖动效果
+  sensitivity: 1.5 # 拖动灵敏度 (0.5-3.0)
+  animation_duration: 300 # 动画持续时间 (毫秒)
+  draggable_elements: # 可拖动元素选择器
+    - '.card-widget'
+    - '.post-item'
+    - '.sidebar-item'
+    - '.header'
+    - '.footer'
+  parallax: # 视差效果配置
+    enable: true
+    speed: 0.5
+  hover_effects: # 悬停效果配置
+    enable: true
+    scale: 1.05
+    translate_y: -5
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
 # Aside
 # 侧边栏
 aside:

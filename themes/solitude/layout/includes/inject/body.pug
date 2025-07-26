@@ -95,6 +95,9 @@ div
     each item in theme.extends.body
       != item
 
+  // 引入拖动效果脚本
+  script(src=url_for('/js/drag-effects.js'))
+
   .js-pjax
     if is_home() && theme.brevity.enable && theme.brevity.home_mini
       script.
