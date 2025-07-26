@@ -80,7 +80,7 @@ hexo.extend.filter.register("before_generate", () => {
     });
 
     if (cond === "internal")
-      data.main_css = `css/index.css${CDN.version ? `?v=${version}` : ""}`;
+      data.main_css = `css/index.css${CDN.version ? `?v=${version}&t=${Date.now()}` : `?t=${Date.now()}`}`;
     return data;
   };
 

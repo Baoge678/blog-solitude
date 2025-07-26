@@ -593,8 +593,8 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 # 音乐胶囊
 capsule:
   enable: true
-  # 歌单 ID / 单曲 ID (使用一个流行的歌单)
-  id: 60198
+  # 歌单 ID / 单曲 ID (华语流行音乐精选)
+  id: 3778678
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
@@ -882,8 +882,8 @@ search:
 # 音乐馆
 music:
   enable: true
-  # 歌单 ID / 单曲 ID (使用一个流行的歌单)
-  id: 60198
+  # 歌单 ID / 单曲 ID (华语流行音乐精选)
+  id: 3778678
   # 服务商：netease / qq / xiami / kugou / baidu
   server: netease
   # 类型：playlist / song
