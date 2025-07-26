@@ -6,6 +6,28 @@
 (function() {
     'use strict';
 
+    // 测试：确保文件被正确加载
+    console.log('🚀 拖动效果脚本已加载！');
+    
+    // 在页面加载完成后显示测试信息
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 页面加载完成，拖动效果初始化中...');
+            // 添加一个测试元素
+            const testDiv = document.createElement('div');
+            testDiv.style.cssText = 'position:fixed;top:10px;right:10px;background:red;color:white;padding:10px;z-index:9999;';
+            testDiv.textContent = '拖动效果已加载';
+            document.body.appendChild(testDiv);
+        });
+    } else {
+        console.log('📄 页面已加载，拖动效果初始化中...');
+        // 添加一个测试元素
+        const testDiv = document.createElement('div');
+        testDiv.style.cssText = 'position:fixed;top:10px;right:10px;background:red;color:white;padding:10px;z-index:9999;';
+        testDiv.textContent = '拖动效果已加载';
+        document.body.appendChild(testDiv);
+    }
+
     // 配置选项
     const config = {
         // 拖动灵敏度
@@ -35,6 +57,8 @@
         }
     };
 
+    console.log('⚙️ 拖动效果配置:', config);
+
     // 拖动状态
     let dragState = {
         isDragging: false,
@@ -50,17 +74,23 @@
      * 初始化拖动效果
      */
     function initDragEffects() {
-        if (!config.enabled) return;
+        if (!config.enabled) {
+            console.log('❌ 拖动效果已禁用');
+            return;
+        }
+
+        console.log('🎯 开始初始化拖动效果...');
 
         // 为所有可拖动元素添加事件监听
         config.draggableSelectors.forEach(selector => {
             const elements = document.querySelectorAll(selector);
+            console.log(`🔍 找到 ${elements.length} 个元素匹配选择器: ${selector}`);
             elements.forEach(element => {
                 addDragListeners(element);
             });
         });
 
-        console.log('拖动效果初始化完成');
+        console.log('✅ 拖动效果初始化完成');
     }
 
     /**
@@ -81,6 +111,8 @@
         
         // 添加CSS类
         element.classList.add('draggable-element');
+        
+        console.log('🎯 已为元素添加拖动监听器:', element);
     }
 
     /**
@@ -89,6 +121,8 @@
     function handleMouseDown(e) {
         if (e.button !== 0) return; // 只响应左键
 
+        console.log('🖱️ 鼠标按下事件触发');
+        
         dragState.isDragging = true;
         dragState.element = e.currentTarget;
         dragState.startX = e.clientX;
@@ -123,6 +157,8 @@
      */
     function handleMouseUp(e) {
         if (!dragState.isDragging) return;
+
+        console.log('🖱️ 鼠标释放事件触发');
 
         // 移除拖动状态
         dragState.element.classList.remove('dragging');
