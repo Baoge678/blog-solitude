@@ -30,7 +30,16 @@ git remote set-url origin https://github.com/Baoge678/blog-baoge.git
 
 
 # 一键推送所有更改
+
 git pushall
 
+
+
 # 或者使用脚本
+
 .\push.ps1
+
+#或者中文脚本
+
+.\推送.ps1
+  
