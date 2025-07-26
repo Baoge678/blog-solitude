@@ -95,19 +95,7 @@ div
     each item in theme.extends.body
       != item
 
-  // 引入拖动效果脚本
-  script.
-    // 拖动效果配置
-    window.hexo_config = window.hexo_config || {};
-    window.hexo_config.drag_effects = {
-      enable: true,
-      sensitivity: 1.5,
-      animation_duration: 300,
-      draggable_elements: ['.card-widget', '.post-item', '.sidebar-item', '.header', '.footer'],
-      parallax: { enable: true, speed: 0.5 },
-      hover_effects: { enable: true, scale: 1.05, translate_y: -5 }
-    };
-  script(src=url_for(theme.cdn.drag_effects_js))
+
 
   .js-pjax
     if is_home() && theme.brevity.enable && theme.brevity.home_mini

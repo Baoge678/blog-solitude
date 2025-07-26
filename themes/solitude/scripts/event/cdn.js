@@ -33,7 +33,6 @@ hexo.extend.filter.register("before_generate", () => {
     universe_js: { name, file: "js/third_party/universe.min.js", version },
     post_ai: { name, file: "js/post_ai.js", version },
     envelope_js: { name, file: "js/third_party/envelope.min.js", version },
-    drag_effects_js: { name, file: "js/drag-effects.js", version },
   };
 
   const minFile = (file) =>
