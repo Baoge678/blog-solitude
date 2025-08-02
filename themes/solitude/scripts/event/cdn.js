@@ -26,6 +26,7 @@ hexo.extend.filter.register("before_generate", () => {
     cover_api: { name, file: "js/covercolor/api.js", version },
     cover_ave: { name, file: "js/covercolor/ave.js", version },
     music_js: { name, file: "js/music.js", version },
+    local_music_js: { name, file: "js/local-music.js", version },
     right_menu_js: { name, file: "js/right_menu.js", version },
     translate_js: { name, file: "js/tw_cn.js", version },
     commentBarrage: { name, file: "js/third_party/barrage.min.js", version },

@@ -61,6 +61,10 @@ div
       var meting_api = '!{theme.meting_api}';
     script(src=url_for(theme.cdn.aplayer_js))
     script(src=url_for(theme.cdn.meting_js))
+    
+  // 本地音乐播放器
+  if theme.capsule.server === 'local' && theme.capsule.custom_list
+    script(src=url_for(theme.cdn.local_music_js))
 
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode
