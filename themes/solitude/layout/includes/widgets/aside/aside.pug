@@ -20,8 +20,6 @@ if noSticky || Sticky
                 include ./asideToc.pug
             each item in Sticky || []
                 include ./asideSwitch.pug
-        // 添加高级音乐播放器
-        include ./asideMusicPlayer.pug
 else
     style.
         .layout > div:first-child {

@@ -113,13 +113,13 @@ carousel: false
 aside:
   home:
     noSticky: "about"
-    Sticky: "allInfo"
+    Sticky: "allInfo,musicPlayer"
   post:
     noSticky: "about"
-    Sticky: "newestPost"
+    Sticky: "newestPost,musicPlayer"
   page:
     noSticky: "about"
-    Sticky: "newestPost,allInfo"
+    Sticky: "newestPost,allInfo,musicPlayer"
   position: 1
   card:
     style: 0
