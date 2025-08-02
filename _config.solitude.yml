@@ -228,4 +228,36 @@ footer:
       url: /atom.xml
 # --------------------------- 页脚 end ---------------------------
 
+# --------------------------- 音乐播放器配置 start ---------------------------
+# 音乐胶囊配置 - 保持原有功能，添加自定义音频支持
+capsule:
+  enable: true
+  server: local  # 使用自定义音频
+  type: song
+  volume: 0.6
+  custom_list:
+    - name: 高山槐花开
+      artist: 凤凰传奇
+      url: https://flaredrive.baoge.wang/webdav/mp3/凤凰传奇-高山槐花开.mp3
+    - name: 最炫民族风
+      artist: 凤凰传奇
+      url: https://flaredrive.baoge.wang/webdav/mp3/凤凰传奇-最炫民族风.mp3
+
+# 音乐馆配置 - 保持原有功能，添加自定义音频支持
+music:
+  enable: true
+  server: local  # 使用自定义音频
+  type: song
+  volume: 0.6
+  mutex: true
+  order: random
+  custom_list:
+    - name: 高山槐花开
+      artist: 凤凰传奇
+      url: https://flaredrive.baoge.wang/webdav/mp3/凤凰传奇-高山槐花开.mp3
+    - name: 最炫民族风
+      artist: 凤凰传奇
+      url: https://flaredrive.baoge.wang/webdav/mp3/凤凰传奇-最炫民族风.mp3
+# --------------------------- 音乐播放器配置 end ---------------------------
+
 # 其余配置项（如 comment、search、music、capsule、highlight、katex、pwa、CDN等）可参考官方文档或你原有的配置继续补充

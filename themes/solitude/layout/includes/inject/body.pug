@@ -65,6 +65,7 @@ div
   // 本地音乐播放器
   if theme.capsule.server === 'local' && theme.capsule.custom_list
     script(src=url_for(theme.cdn.local_music_js))
+    script(src=url_for('/js/local-music.js'))
 
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode
