@@ -21,12 +21,14 @@ echo.
 echo 3. 提交更改...
 for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set mydate=%%c%%a%%b
 for /f "tokens=1-2 delims=: " %%a in ('time /t') do set mytime=%%a%%b
-git commit -m "Auto update: %mydate% %mytime%"
+set commitMessage=更新博客配置: %mydate% %mytime%
+git commit -m "%commitMessage%"
 if %errorlevel% neq 0 (
     echo 错误：提交失败
     pause
     exit /b 1
 )
+echo 提交信息: %commitMessage%
 echo.
 
 echo 4. 推送到远程仓库...
@@ -41,5 +43,6 @@ echo.
 
 echo ========================================
 echo 推送完成！
+echo Cloudflare Pages将自动重新部署...
 echo ========================================
 pause 

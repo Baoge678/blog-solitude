@@ -29,10 +29,38 @@ git remote set-url origin https://github.com/Baoge678/blog-baoge.git
 
 
 
+# Hexo部署命令
+
+## 本地预览
+hexo cl; hexo s
+# 清理缓存并启动本地服务器预览
+
+## 生成并部署
+hexo cl; hexo g; hexo d
+# 清理→生成→部署到远程服务器
+
+## 分步执行
+hexo clean      # 清理缓存
+hexo generate   # 生成静态文件
+hexo server     # 本地预览
+hexo deploy     # 部署到远程
+
+
+# 标准Git推送流程（推荐）
+
+## 1. 添加所有修改的文件
+git add .
+
+## 2. 提交修改
+git commit -m "更新菜单配置：删除首页、友链、我的菜单"
+
+## 3. 推送到GitHub
+git push origin main
+
+
 # 一键推送所有更改
 
 git pushall
-
 
 
 # 或者使用脚本
@@ -43,3 +71,28 @@ git pushall
   #兼容性推送脚本
 
  .\push.bat
+
+
+# 快速推送（简化版）
+
+## 设置远程仓库地址（首次使用）
+git remote set-url origin https://github.com/Baoge678/blog-solitude.git
+
+## 推送代码
+git add .
+git commit -m "更新博客配置"
+git push origin main
+
+
+# 完整部署流程（推荐）
+
+## 1. 生成静态文件
+hexo cl; hexo g
+
+## 2. 推送到GitHub
+git add .
+git commit -m "更新博客配置"
+git push origin main
+
+## 3. 自动部署
+# Cloudflare Pages会自动重新部署
