@@ -231,7 +231,7 @@ footer:
 # --------------------------- 音乐播放器配置 start ---------------------------
 # 音乐胶囊配置 - 使用网易云音乐（底部播放器）
 capsule:
-  enable: true
+  enable: false
   server: netease  # 使用网易云音乐
   type: playlist
   volume: 0.6
