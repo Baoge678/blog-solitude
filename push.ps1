@@ -9,16 +9,50 @@ if ($status) {
     $status | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
     Write-Host ""
     
-    # Add all changes
-    Write-Host "2. Adding all changes..." -ForegroundColor Yellow
-    git add .
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ Add successful" -ForegroundColor Green
-    } else {
-        Write-Host "✗ Add failed" -ForegroundColor Red
-        Read-Host "Press Enter to exit"
-        exit 1
+    # Smart add files (skip problematic files)
+    Write-Host "2. Smart adding files (skipping problematic files)..." -ForegroundColor Yellow
+    Write-Host "Adding main files..." -ForegroundColor Cyan
+    
+    # Add main directories and files
+    $addCommands = @(
+        "source/",
+        "themes/", 
+        "_config.yml",
+        "_config.solitude.yml",
+        "package.json",
+        "package-lock.json",
+        "README.md",
+        ".gitignore",
+        "push.ps1",
+        "push.bat",
+        "推送说明.md",
+        "solitude推送到GitHub.txt",
+        "中文歌单推荐.md",
+        "音乐播放功能说明.md",
+        "播放器功能说明.md",
+        "自建歌单使用说明.md",
+        "音乐播放器测试.md"
+    )
+    
+    foreach ($file in $addCommands) {
+        git add $file
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "  ✓ Added: $file" -ForegroundColor Green
+        } else {
+            Write-Host "  ⚠ Skipped: $file" -ForegroundColor Yellow
+        }
     }
+    
+    # Add deleted files (skip tatus)
+    Write-Host "Adding deleted files status (skipping tatus)..." -ForegroundColor Cyan
+    git add "h --force-with-lease origin main"
+    
+    # Check for tatus file problem
+    if (Test-Path "tatus") {
+        Write-Host "⚠ Warning: Found tatus file, skipping this file" -ForegroundColor Yellow
+        Write-Host "To delete this file, run: Remove-Item -Path 'tatus' -Force" -ForegroundColor Gray
+    }
+    
     Write-Host ""
     
     # Commit changes
