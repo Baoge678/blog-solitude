@@ -9,8 +9,6 @@ case item
         include ./asideAdsense.pug
     when 'newest_comment'
         include ./asideNewstComments.pug
-    when 'musicPlayer'
-        include ./asideMusicPlayer.pug
     default
         - const custom = site.data?.aside?.find((i) => i.name === item)
         if custom

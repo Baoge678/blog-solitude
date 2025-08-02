@@ -66,9 +66,6 @@ div
   if theme.capsule.server === 'local' && theme.capsule.custom_list
     script(src=url_for(theme.cdn.local_music_js))
 
-  // 高级音乐播放器
-  script(src=url_for('/js/music-player.js'))
-
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode
       when 'local'
