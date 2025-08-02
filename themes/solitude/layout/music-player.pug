@@ -1,0 +1,75 @@
+extends includes/layout.pug
+
+block content
+  include includes/mixins/article-sort.pug
+  #recent-posts.layout_page
+    .article-sort-title= _p('page.archives')
+    .card-music-player
+      .item-headline
+        i.fas.fa-music
+        span 高级播放器
+      .music-player-container
+        .player-main
+          .player-info
+            .song-info
+              .song-title#current-song-title 未选择歌曲
+              .song-artist#current-song-artist 未知歌手
+            .player-controls
+              button.player-btn#prev-btn(title="上一首")
+                i.fas.fa-step-backward
+              button.player-btn#play-btn(title="播放/暂停")
+                i.fas.fa-play
+              button.player-btn#next-btn(title="下一首")
+                i.fas.fa-step-forward
+          .player-progress
+            .progress-bar
+              .progress-filled#progress-filled
+              input.progress-input#progress-input(type="range" min="0" max="100" value="0")
+            .time-display
+              span#current-time 0:00
+              span /
+              span#total-time 0:00
+          .player-volume
+            i.fas.fa-volume-up
+            input.volume-slider#volume-slider(type="range" min="0" max="100" value="60")
+          .player-mode
+            button.mode-btn#mode-btn(title="播放模式")
+              i.fas.fa-random
+            span.mode-text#mode-text 随机播放
+        .player-playlist
+          .playlist-header
+            span 播放列表
+            button.playlist-toggle#playlist-toggle
+              i.fas.fa-chevron-down
+            button.edit-btn#edit-btn(title="编辑列表")
+              i.fas.fa-edit
+          .playlist-search
+            input.search-input#search-input(type="text" placeholder="搜索歌曲...")
+          .playlist-content#playlist-content
+            .playlist-item(data-index="0")
+              .item-info
+                .item-title 高山槐花开
+                .item-artist 凤凰传奇
+              .item-duration 4:30
+            .playlist-item(data-index="1")
+              .item-info
+                .item-title 最炫民族风
+                .item-artist 凤凰传奇
+              .item-duration 3:45
+        .player-edit
+          .edit-header
+            span 编辑播放列表
+            button.close-edit#close-edit
+              i.fas.fa-times
+          .edit-content
+            .edit-form
+              input.edit-input#edit-song-name(type="text" placeholder="歌曲名称")
+              input.edit-input#edit-song-artist(type="text" placeholder="歌手名称")
+              input.edit-input#edit-song-url(type="text" placeholder="音频文件URL")
+              button.add-song-btn#add-song-btn 添加歌曲
+            .edit-list#edit-list
+              .edit-item
+                .edit-item-info
+                  span 高山槐花开 - 凤凰传奇
+                button.remove-song-btn
+                  i.fas.fa-trash 

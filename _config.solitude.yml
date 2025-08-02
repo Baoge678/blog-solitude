@@ -121,51 +121,6 @@ aside:
     noSticky: "about"
     Sticky: "newestPost,allInfo"
   position: 1
-  card:
-    style: 0
-    author:
-      img: https://pan.811520.xyz/2024-10/1728197294016.webp
-      sticker:
-    url: /about/
-    background:
-    content: 这是我的博客
-    content2: 一个热爱生活的人
-    sayhello:
-      morning: ✨ 早上好，又是新的一天
-      noon: 午休时间到了
-      afternoon: 下午茶 🍵
-      night: 早点睡觉
-      goodnight: 晚安 😴
-    sayhello2:
-    information:
-      Github: https://github.com/everfu || fab fa-github
-      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      微信: https://your-wechat-link || fab fa-weixin
-      邮箱: mailto:your@email.com || fas fa-envelope
-  flip:
-    favicon:
-    face:
-    backface:
-    backcolor: "var(--efu-blue)"
-  toc:
-    post: true
-    page: false
-    vague: true
-  tags:
-    enable: true
-    limit: 20
-    highlight_list:
-  archive:
-    enable: true
-    type: "month"
-  siteinfo:
-    postcount: true
-    wordcount: false
-    pv: true
-    uv: true
-    updatetime: true
-    runtimeenable: true
-    runtime: "2025-07-20 00:00:00"
 # --------------------------- 侧边栏 end ---------------------------
 
 # --------------------------- 页面默认设置 start ---------------------------
