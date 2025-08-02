@@ -1,28 +1,2 @@
 if theme.capsule.server === 'netease'
   meting-js(id=theme.capsule.id server=theme.capsule.server type=theme.capsule.type mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume=theme.capsule.volume)
-else if theme.capsule.server === 'local'
-  // 本地音乐播放器
-  .local-music-player
-    .player-controls
-      button#play-btn.player-btn
-        i.fas.fa-play
-      button#prev-btn.player-btn
-        i.fas.fa-step-backward
-      button#next-btn.player-btn
-        i.fas.fa-step-forward
-    .player-info
-      .song-title#current-song-title 未选择歌曲
-      .song-artist#current-song-artist 未知歌手
-    .player-progress
-      .progress-bar
-        .progress-filled#progress-filled
-        input.progress-input#progress-input(type="range" min="0" max="100" value="0")
-      .time-display
-        span#current-time 0:00
-        span /
-        span#total-time 0:00
-    .player-volume
-      i.fas.fa-volume-up
-      input.volume-slider#volume-slider(type="range" min="0" max="100" value="60")
-    .player-playlist#playlist
-      // 播放列表将通过JavaScript动态生成
