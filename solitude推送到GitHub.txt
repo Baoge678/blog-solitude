@@ -1,98 +1,32 @@
-您现在想将代码推送到 https://github.com/Baoge678/blog-solitude 这个新的仓库地址。这完全可以解决之前遇到的权限问题。
+# 博客推送快速参考
 
-我需要先更新您本地 Git 仓库关联的远程地址（通常称为 origin ），将其从旧的 baoge998 仓库指向您这个新的 Baoge678 仓库。
+## 标准Git推送流程
 
+### 完整命令
+```bash
+git add .
+git commit -m "Update blog config"
+git push origin main
+```
 
-blog-solitude 终端
-
-
-git remote set-url origin https://github.com/Baoge678/blog-solitude.git
-
-
-远程仓库地址已经成功更新为您自己的仓库 Baoge678/blog-solitude 。现在，权限问题已经解决，我们可以再次尝试推送了。
-
-blog-solitude 终端
-
-
-git push
-
-
-太棒了！这次推送成功了。
-
-
-
-
-代码推送到 https://github.com/Baoge678/blog-baoge 这个新的仓库地址
-
-
-git remote set-url origin https://github.com/Baoge678/blog-baoge.git
-
-
-
-# Hexo部署命令
-
-## 本地预览
-hexo cl; hexo s
-# 清理缓存并启动本地服务器预览
-
-## 生成并部署
-hexo cl; hexo g; hexo d
-# 清理→生成→部署到远程服务器
-
-## 分步执行
-hexo clean      # 清理缓存
-hexo generate   # 生成静态文件
-hexo server     # 本地预览
-hexo deploy     # 部署到远程
-
-
-# 标准Git推送流程（推荐）
-
-## 1. 添加所有修改的文件
+### 分步执行
+```bash
+# 1. 添加文件
 git add .
 
-## 2. 提交修改
-git commit -m "更新菜单配置：删除首页、友链、我的菜单"
+# 2. 提交
+git commit -m "Update blog config"
 
-## 3. 推送到GitHub
+# 3. 推送
 git push origin main
+```
 
+### 检查状态
+```bash
+git status
+```
 
-# 一键推送所有更改
-
-git pushall
-
-
-# 或者使用脚本
-
-.\push.ps1
-
-
-  #兼容性推送脚本
-
- .\push.bat
-
-
-# 快速推送（简化版）
-
-## 设置远程仓库地址（首次使用）
-git remote set-url origin https://github.com/Baoge678/blog-solitude.git
-
-## 推送代码
-git add .
-git commit -m "更新博客配置"
-git push origin main
-
-
-# 完整部署流程（推荐）
-
-## 1. 生成静态文件
-hexo cl; hexo g
-
-## 2. 推送到GitHub
-git add .
-git commit -m "更新博客配置"
-git push origin main
-
-## 3. 自动部署
-# Cloudflare Pages会自动重新部署
+## 推送成功后
+- 代码推送到GitHub
+- Cloudflare Pages自动重新部署
+- 博客更新最新配置
