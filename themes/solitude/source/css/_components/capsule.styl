@@ -50,9 +50,9 @@
   meting-js
     .aplayer
       // 增加宽度，确保不遮挡右侧按键
-      width: 450px !important
-      min-width: 450px !important
-      max-width: 450px !important
+      width: calc(100vw - 40px) !important
+      min-width: calc(100vw - 40px) !important
+      max-width: calc(100vw - 40px) !important
       position: fixed !important
       bottom: 20px !important
       left: 20px !important
@@ -100,10 +100,23 @@
           left: 50% !important
           transform: translate(-50%, -50%) !important
           font-size: 20px !important
-          color: var(--efu-white) !important
-          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important
+          color: #4caf50 !important
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important
           cursor: pointer !important
           z-index: 10000 !important
+          background: rgba(255, 255, 255, 0.9) !important
+          border-radius: 50% !important
+          width: 30px !important
+          height: 30px !important
+          display: flex !important
+          align-items: center !important
+          justify-content: center !important
+          transition: all 0.3s ease !important
+          
+          &:hover
+            background: rgba(255, 255, 255, 1) !important
+            transform: translate(-50%, -50%) scale(1.1) !important
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4) !important
       
       // 确保播放器内容布局合理
       .aplayer-info
@@ -140,9 +153,10 @@
         display: flex !important
         align-items: center !important
         justify-content: space-between !important
-        padding: 8px 16px !important
-        gap: 12px !important
+        padding: 12px 20px !important
+        gap: 16px !important
         border-top: 1px solid var(--efu-border) !important
+        flex-wrap: wrap !important
         
         // 左侧播放控制按钮组 - 上一首、播放/暂停、下一首
         .aplayer-icon-back,
@@ -152,22 +166,24 @@
           opacity: 1 !important
           visibility: visible !important
           cursor: pointer !important
-          margin: 0 4px !important
-          font-size: 16px !important
-          color: #000 !important
-          transition: all 0.2s ease !important
-          background: #f0f0f0 !important
-          border-radius: 6px !important
-          padding: 6px !important
-          border: 1px solid #ddd !important
+          margin: 0 6px !important
+          font-size: 18px !important
+          color: #333 !important
+          transition: all 0.3s ease !important
+          background: #f8f9fa !important
+          border-radius: 8px !important
+          padding: 8px !important
+          border: 2px solid #e9ecef !important
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important
           
           &:hover
-            color: #0066cc !important
-            transform: scale(1.1) !important
-            background: #e6f3ff !important
-            border-color: #0066cc !important
+            color: #ff6b6b !important
+            transform: scale(1.15) !important
+            background: #fff5f5 !important
+            border-color: #ff6b6b !important
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3) !important
         
-        // 播放模式按钮组 - 确保不被遮挡
+        // 播放模式按钮组 - 确保不被遮挡，使用更明显的样式
         .aplayer-icon-order,
         .aplayer-icon-loop,
         .aplayer-icon-menu
@@ -175,22 +191,24 @@
           opacity: 1 !important
           visibility: visible !important
           cursor: pointer !important
-          margin: 0 4px !important
-          font-size: 14px !important
-          color: #000 !important
-          transition: all 0.2s ease !important
-          background: #f0f0f0 !important
-          border-radius: 6px !important
-          padding: 6px !important
-          border: 1px solid #ddd !important
+          margin: 0 6px !important
+          font-size: 16px !important
+          color: #333 !important
+          transition: all 0.3s ease !important
+          background: #f8f9fa !important
+          border-radius: 8px !important
+          padding: 8px !important
+          border: 2px solid #e9ecef !important
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important
           
           &:hover
-            color: #0066cc !important
+            color: #4caf50 !important
             transform: scale(1.1) !important
-            background: #e6f3ff !important
-            border-color: #0066cc !important
+            background: #f1f8e9 !important
+            border-color: #4caf50 !important
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3) !important
         
-        // 音量控制 - 显示音量滑块，深蓝色主题
+        // 音量控制 - 显示音量滑块，绿色主题
         .aplayer-volume-wrap
           display: flex !important
           align-items: center !important
@@ -201,56 +219,61 @@
           .aplayer-volume-bar-wrap
             display: block !important
             opacity: 1 !important
-            width: 60px !important
-            margin-right: 6px !important
+            width: 70px !important
+            margin-right: 8px !important
             
             .aplayer-volume-bar
               display: block !important
               opacity: 1 !important
-              height: 6px !important
-              background: #ddd !important
-              border-radius: 3px !important
+              height: 8px !important
+              background: #e0e0e0 !important
+              border-radius: 4px !important
               cursor: pointer !important
-              border: 1px solid #ccc !important
+              border: 2px solid #ccc !important
+              position: relative !important
               
               .aplayer-volume
                 display: block !important
                 opacity: 1 !important
-                background: #0066cc !important
-                border-radius: 3px !important
+                background: linear-gradient(90deg, #4ecdc4, #44a08d) !important
+                border-radius: 4px !important
                 height: 100% !important
                 
               .aplayer-volume-thumb
                 display: block !important
                 opacity: 1 !important
-                background: #0066cc !important
+                background: #4ecdc4 !important
                 border-radius: 50% !important
-                width: 12px !important
-                height: 12px !important
+                width: 14px !important
+                height: 14px !important
                 top: -3px !important
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important
+                box-shadow: 0 2px 6px rgba(78, 205, 196, 0.4) !important
                 border: 2px solid #fff !important
+                cursor: pointer !important
             
           .aplayer-icon-volume-down,
           .aplayer-icon-volume-up
             display: inline-block !important
             opacity: 1 !important
             cursor: pointer !important
-            margin-left: 6px !important
-            font-size: 14px !important
-            color: #000 !important
-            background: #f0f0f0 !important
-            border-radius: 6px !important
-            padding: 6px !important
-            border: 1px solid #ddd !important
-            transition: all 0.2s ease !important
+            margin-left: 8px !important
+            font-size: 16px !important
+            color: #333 !important
+            background: #f8f9fa !important
+            border-radius: 8px !important
+            padding: 8px !important
+            border: 2px solid #e9ecef !important
+            transition: all 0.3s ease !important
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important
             
             &:hover
-              color: #0066cc !important
-              background: #e6f3ff !important
-              border-color: #0066cc !important
+              color: #4ecdc4 !important
+              background: #e8f5f4 !important
+              border-color: #4ecdc4 !important
+              transform: scale(1.1) !important
+              box-shadow: 0 4px 8px rgba(78, 205, 196, 0.3) !important
       
-      // 进度条优化 - 确保可见
+      // 进度条优化 - 确保可见，使用更明显的颜色
       .aplayer-bar-wrap
         display: block !important
         opacity: 1 !important
@@ -261,34 +284,37 @@
         .aplayer-bar
           display: block !important
           opacity: 1 !important
-          height: 8px !important
-          background: #ddd !important
-          border-radius: 4px !important
+          height: 10px !important
+          background: #e0e0e0 !important
+          border-radius: 5px !important
           cursor: pointer !important
-          border: 1px solid #ccc !important
+          border: 2px solid #ccc !important
+          position: relative !important
           
           .aplayer-played
             display: block !important
             opacity: 1 !important
-            background: #0066cc !important
-            border-radius: 4px !important
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53) !important
+            border-radius: 5px !important
+            height: 100% !important
             
           .aplayer-thumb
             display: block !important
             opacity: 1 !important
-            background: #0066cc !important
+            background: #ff4757 !important
             border-radius: 50% !important
-            width: 16px !important
-            height: 16px !important
+            width: 18px !important
+            height: 18px !important
             top: -4px !important
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important
-            border: 2px solid #fff !important
+            box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4) !important
+            border: 3px solid #fff !important
+            cursor: pointer !important
             
           .aplayer-loaded
             display: block !important
             opacity: 1 !important
-            background: #bbb !important
-            border-radius: 4px !important
+            background: #d0d0d0 !important
+            border-radius: 5px !important
       
       // 时间显示
       .aplayer-time
@@ -339,32 +365,36 @@
               font-weight: 600 !important
               font-size: 13px !important
       
-      // 收缩按钮 - 右上角
+      // 收缩按钮 - 右上角，绿色主题
       .collapse-btn
         position: absolute !important
         top: 8px !important
         right: 8px !important
-        width: 24px !important
-        height: 24px !important
-        background: rgba(0, 0, 0, 0.3) !important
+        width: 28px !important
+        height: 28px !important
+        background: rgba(76, 175, 80, 0.9) !important
         border-radius: 50% !important
         display: flex !important
         align-items: center !important
         justify-content: center !important
         cursor: pointer !important
-        z-index: 10000 !important
-        transition: all 0.2s ease !important
+        z-index: 10001 !important
+        transition: all 0.3s ease !important
+        border: 2px solid rgba(76, 175, 80, 0.5) !important
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important
         
         &:hover
-          background: rgba(0, 0, 0, 0.5) !important
-          transform: scale(1.1) !important
+          background: rgba(76, 175, 80, 1) !important
+          transform: scale(1.2) !important
+          box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5) !important
         
         &::before
           content: "−" !important
-          color: var(--efu-white) !important
-          font-size: 16px !important
+          color: #fff !important
+          font-size: 18px !important
           font-weight: bold !important
           line-height: 1 !important
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important
       
       // 展开按钮 - 胶囊状态
       .expand-btn
@@ -382,9 +412,9 @@
     
     meting-js
       .aplayer
-        width: 350px !important
-        min-width: 350px !important
-        max-width: 350px !important
+        width: calc(100vw - 30px) !important
+        min-width: calc(100vw - 30px) !important
+        max-width: calc(100vw - 30px) !important
         bottom: 15px !important
         left: 15px !important
         
@@ -413,8 +443,8 @@
               font-size: 11px !important
         
         .aplayer-controller
-          padding: 6px 12px !important
-          gap: 8px !important
+          padding: 8px 16px !important
+          gap: 10px !important
           
           .aplayer-icon-back,
           .aplayer-icon-play,
@@ -422,9 +452,9 @@
           .aplayer-icon-order,
           .aplayer-icon-loop,
           .aplayer-icon-menu
-            font-size: 14px !important
-            margin: 0 3px !important
-            padding: 4px !important
+            font-size: 15px !important
+            margin: 0 4px !important
+            padding: 6px !important
         
         .aplayer-volume-wrap
           margin-left: 8px !important
@@ -443,102 +473,13 @@
           height: 20px !important
           top: 6px !important
           right: 6px !important
+          background: rgba(76, 175, 80, 0.8) !important
+          border: 2px solid rgba(76, 175, 80, 0.3) !important
+          
+          &:hover
+            background: rgba(76, 175, 80, 1) !important
+            transform: scale(1.1) !important
           
           &::before
             font-size: 14px !important
-
-// 全局样式覆盖 - 确保进度条和音量控制可见
-.aplayer
-  .aplayer-bar-wrap
-    display: block !important
-    opacity: 1 !important
-    visibility: visible !important
-    margin: 0 16px !important
-    padding: 8px 0 !important
-    
-    .aplayer-bar
-      display: block !important
-      opacity: 1 !important
-      height: 8px !important
-      background: #ddd !important
-      border-radius: 4px !important
-      cursor: pointer !important
-      border: 1px solid #ccc !important
-      
-      .aplayer-played
-        display: block !important
-        opacity: 1 !important
-        background: #0066cc !important
-        border-radius: 4px !important
-        
-      .aplayer-thumb
-        display: block !important
-        opacity: 1 !important
-        background: #0066cc !important
-        border-radius: 50% !important
-        width: 16px !important
-        height: 16px !important
-        top: -4px !important
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important
-        border: 2px solid #fff !important
-        
-      .aplayer-loaded
-        display: block !important
-        opacity: 1 !important
-        background: #bbb !important
-        border-radius: 4px !important
-
-  .aplayer-volume-wrap
-    display: flex !important
-    align-items: center !important
-    opacity: 1 !important
-    visibility: visible !important
-    margin-left: 12px !important
-    
-    .aplayer-volume-bar-wrap
-      display: block !important
-      opacity: 1 !important
-      width: 60px !important
-      margin-right: 6px !important
-      
-      .aplayer-volume-bar
-        display: block !important
-        opacity: 1 !important
-        height: 6px !important
-        background: #ddd !important
-        border-radius: 3px !important
-        cursor: pointer !important
-        border: 1px solid #ccc !important
-        
-        .aplayer-volume
-          display: block !important
-          opacity: 1 !important
-          background: #0066cc !important
-          border-radius: 3px !important
-          height: 100% !important
-          
-        .aplayer-volume-thumb
-          display: block !important
-          opacity: 1 !important
-          background: #0066cc !important
-          border-radius: 50% !important
-          width: 12px !important
-          height: 12px !important
-          top: -3px !important
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important
-          border: 2px solid #fff !important
-
-  .aplayer-time
-    display: flex !important
-    opacity: 1 !important
-    visibility: visible !important
-    justify-content: space-between !important
-    font-size: 12px !important
-    color: #000 !important
-    margin: 0 16px 8px 16px !important
-    font-weight: 500 !important
-    
-    .aplayer-ptime,
-    .aplayer-dtime
-      display: inline-block !important
-      opacity: 1 !important 
+            color: #fff !important 
