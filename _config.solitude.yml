@@ -239,7 +239,7 @@ capsule:
 
 # 音乐馆配置 - 使用网易云音乐（独立音乐页面）
 music:
-  enable: false  # 启用音乐馆，提供完整的音乐页面
+  enable: true  # 启用音乐馆，提供完整的音乐页面
   server: netease  # 使用网易云音乐
   type: playlist
   volume: 0.6
