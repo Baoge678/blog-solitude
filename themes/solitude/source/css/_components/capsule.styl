@@ -1,52 +1,24 @@
-@keyframes changeright
-  0%, 50%, 100%
-    transform: rotate(0deg) scale(1.1)
-    box-shadow: 0 0 2px #ffffff00
-  25%, 75%
-    transform: rotate(90deg) scale(1.1)
-    box-shadow: 0 0 14px #ffffff
-
-@keyframes playingShadow
-  0%, 100%
-    box-shadow: 0 0px 12px -3px var(--efu-none)
-  50%
-    box-shadow: 0 0px 12px 0px var(--efu-music)
-
-@keyframes lightBar
-  0%, 100%
-    opacity: 0.1
-  60%
-    opacity: 0.3
-
-.aplayer.aplayer-narrow
-  .aplayer-body,
-  .aplayer-pic
-    height: 66px
-    width: 66px
-
 #nav-music
   position: fixed
   bottom: 20px
   left: 20px
   z-index: 9999
-  display: flex
-  align-items: center
+  display: block
   margin: 0
   padding: 0
   width: auto
-  height: 36px
-  background-color: var(--efu-card-bg)
+  height: auto
+  background: none
   color: var(--efu-fontcolor)
-  cursor: pointer
-  border-radius: 18px
-  transition: all 0.3s ease 0s
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1)
-  backdrop-filter: blur(10px)
+  border-radius: 0
+  transition: none
+  box-shadow: none
+  backdrop-filter: none
   font-size: 15px
-  min-width: 80px
+  min-width: auto
 
   .nav-music-capsule
-    display: flex
+    display: none
     align-items: center
     gap: 6px
     padding: 0 16px
@@ -61,37 +33,25 @@
       color: var(--efu-main)
 
   &:hover
-    transform: translateY(-3px)
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15)
-    background: var(--efu-main)
-    color: #fff
-    .capsule-text
-      color: #fff
+    transform: none
+    box-shadow: none
+    background: none
+    color: var(--efu-fontcolor)
 
   &.playing
-    box-shadow: 0 0px 12px -3px var(--efu-main)
-    background: var(--efu-main)
-    color: #fff
-    .capsule-text
-      color: #fff
+    box-shadow: none
+    background: none
+    color: var(--efu-fontcolor)
 
   &.expanded
-    display: none
-
-@keyframes music_rotate
-  0%
-    transform: rotate(0deg)
-
-  100%
-    transform: rotate(360deg)
+    display: block
 
 // 移动端适配
 @media (max-width: 768px)
   #nav-music
     bottom: 15px
     left: 15px
-    transform: scale(0.9)
-    min-width: 60px
+    transform: none
+    min-width: auto
     .nav-music-capsule
-      font-size: 13px
-      padding: 0 10px
+      display: none 
