@@ -753,6 +753,7 @@ extends:
   # Insert in head
   # 插入到 head
   head:
+    - <script defer src="https://fx.baoge.wang/tracker.min.js" data-website-id="weblog"></script>
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
 
   # Insert in body
